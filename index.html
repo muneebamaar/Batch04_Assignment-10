@@ -86,30 +86,30 @@
             <!-- End of Row # 02 -->
             <!-- Start of Row # 03 -->
             <div class="row my-3">
-                <!-- Program # 07 -  -->
+                <!-- Program # 07 - Convert each Character to Togglecase -->
                 <div class="col-sm m-2 rounded segment">
-                    <h4 class="text-center"></h4>
+                    <h4 class="text-center">Convert each Character to Togglecase</h4>
                     <form action="" onclick="return false">
-                        <input type="text" class="form-control mb-3" id="" placeholder="Enter a String">
-                        <input type="button" class="btn btn-secondary mb-3" onclick="" value="Check Result">
+                        <input type="text" class="form-control mb-3" id="toTogglecaseValue" placeholder="Enter a String">
+                        <input type="button" class="btn btn-secondary mb-3" onclick="toTogglecase()" value="Check Result">
                     </form>
                     <p class="none" id="alert07"></p>
                 </div>
-                <!-- Program # 08 -  -->
+                <!-- Program # 08 - Total number of Alphabets, Digits, and Special Characters -->
                 <div class="col-sm m-2 rounded segment">
-                    <h4 class="text-center"></h4>
+                    <h4 class="text-center">Total number of Alphabets, Digits, and Special Characters</h4>
                     <form action="" onclick="return false">
-                        <input type="text" class="form-control mb-3" id="" placeholder="Enter a String">
-                        <input type="button" class="btn btn-secondary mb-3" onclick="" value="Check Result">
+                        <input type="text" class="form-control mb-3" id="totalCharactersWithTypeValue" placeholder="Enter a String">
+                        <input type="button" class="btn btn-secondary mb-3" onclick="totalCharactersWithType()" value="Check Result">
                     </form>
                     <p class="none" id="alert08"></p>
                 </div>
-                <!-- Program # 09 -  -->
+                <!-- Program # 09 - Number of Vowels and Consonants -->
                 <div class="col-sm m-2 rounded segment">
-                    <h4 class="text-center"></h4>
+                    <h4 class="text-center">Number of Vowels and Consonants</h4>
                     <form action="" onclick="return false">
-                        <input type="text" class="form-control mb-3" id="" placeholder="Enter a String">
-                        <input type="button" class="btn btn-secondary mb-3" onclick="" value="Check Result">
+                        <input type="text" class="form-control mb-3" id="totalVowelsConsonantsValue" placeholder="Enter a String">
+                        <input type="button" class="btn btn-secondary mb-3" onclick="totalVowelsConsonants()" value="Check Result">
                     </form>
                     <p class="none" id="alert09"></p>
                 </div>
@@ -118,21 +118,21 @@
             <!-- End of Row # 03 -->
             <!-- Start of Row # 04 -->
             <div class="row my-3">
-                <!-- Program # 10 -  -->
+                <!-- Program # 10 - Count total number of Words -->
                 <div class="col-sm m-2 rounded segment">
-                    <h4 class="text-center"></h4>
+                    <h4 class="text-center">Count total number of Words</h4>
                     <form action="" onclick="return false">
-                        <input type="text" class="form-control mb-3" id="" placeholder="Enter a String">
-                        <input type="button" class="btn btn-secondary mb-3" onclick="" value="Check Result">
+                        <input type="text" class="form-control mb-3" id="totalWordsValue" placeholder="Enter a String">
+                        <input type="button" class="btn btn-secondary mb-3" onclick="totalWords()" value="Check Result">
                     </form>
                     <p class="none" id="alert10"></p>
                 </div>
-                <!-- Program # 11 -  -->
+                <!-- Program # 11 - Reverse of a String -->
                 <div class="col-sm m-2 rounded segment">
-                    <h4 class="text-center"></h4>
+                    <h4 class="text-center">Reverse of a String</h4>
                     <form action="" onclick="return false">
-                        <input type="text" class="form-control mb-3" id="" placeholder="Enter a String">
-                        <input type="button" class="btn btn-secondary mb-3" onclick="" value="Check Result">
+                        <input type="text" class="form-control mb-3" id="reverseStringValue" placeholder="Enter a String">
+                        <input type="button" class="btn btn-secondary mb-3" onclick="reverseString()" value="Check Result">
                     </form>
                     <p class="none" id="alert11"></p>
                 </div>
@@ -147,7 +147,203 @@
                 </div>
             </div>
             <hr>
-            <!-- End of Row # 01 -->
+            <!-- End of Row # 04 -->
+            <!-- Start of Row # 05 -->
+            <div class="row my-3">
+                <!-- Program # 13 - Reverse order of Words -->
+                <div class="col-sm m-2 rounded segment">
+                    <h4 class="text-center">Reverse order of Words</h4>
+                    <form action="" onclick="return false">
+                        <input type="text" class="form-control mb-3" id="reverseWordsValue" placeholder="Enter a String">
+                        <input type="button" class="btn btn-secondary mb-3" onclick="reverseWords()" value="Check Result">
+                    </form>
+                    <p class="none" id="alert13"></p>
+                </div>
+                <!-- Program # 14 - First Occurance of a Character -->
+                <div class="col-sm m-2 rounded segment">
+                    <h4 class="text-center">First Occurance of a Character</h4>
+                    <form action="" onclick="return false">
+                        <input type="text" class="form-control mb-3" id="firstOccuCharacterValue" placeholder="Enter a String">
+                        <input type="text" class="form-control mb-3" maxlength="1" id="firstOccuCharacterValue2" placeholder="Enter a characetr">
+                        <input type="button" class="btn btn-secondary mb-3" onclick="firstOccuCharacter()" value="Check Result">
+                    </form>
+                    <p class="none" id="alert14"></p>
+                </div>
+                <!-- Program # 15 - Last Occurance of a Character -->
+                <div class="col-sm m-2 rounded segment">
+                    <h4 class="text-center">Last Occurance of a Character</h4>
+                    <form action="" onclick="return false">
+                        <input type="text" class="form-control mb-3" id="lastOccuCharacterValue" placeholder="Enter a String">
+                        <input type="text" class="form-control mb-3" maxlength="1" id="lastOccuCharacterValue2" placeholder="Enter a character">
+                        <input type="button" class="btn btn-secondary mb-3" onclick="lastOccuCharacter()" value="Check Result">
+                    </form>
+                    <p class="none" id="alert15"></p>
+                </div>
+            </div>
+            <hr>
+            <!-- End of Row # 05 -->
+            <!-- Start of Row # 06 -->
+            <div class="row my-3">
+                <!-- Program # 16 - Search all occurances of Character -->
+                <div class="col-sm m-2 rounded segment">
+                    <h4 class="text-center">Search all occurances of a Character</h4>
+                    <form action="" onclick="return false">
+                        <input type="text" class="form-control mb-3" id="allOccuCharacterValue" placeholder="Enter a String">
+                        <input type="text" class="form-control mb-3" maxlength="1" id="allOccuCharacterValue2" placeholder="Enter a character">
+                        <input type="button" class="btn btn-secondary mb-3" onclick="allOccuCharacter()" value="Check Result">
+                    </form>
+                    <p class="none" id="alert16"></p>
+                </div>
+                <!-- Program # 17 - Count all Occurances of a Character -->
+                <div class="col-sm m-2 rounded segment">
+                    <h4 class="text-center">Count all Occurances of a Character</h4>
+                    <form action="" onclick="return false">
+                        <input type="text" class="form-control mb-3" id="countOccuCharacterValue" placeholder="Enter a String">
+                        <input type="text" class="form-control mb-3" maxlength="1" id="countOccuCharacterValue2" placeholder="Enter a String">
+                        <input type="button" class="btn btn-secondary mb-3" onclick="countOccuCharacter()" value="Check Result">
+                    </form>
+                    <p class="none" id="alert17"></p>
+                </div>
+                <!-- Program # 18 - Find Highest Frequency Character -->
+                <div class="col-sm m-2 rounded segment">
+                    <h4 class="text-center">Find Highest Frequency Character</h4>
+                    <form action="" onclick="return false">
+                        <input type="text" class="form-control mb-3" id="highFreqCharacterValue" placeholder="Enter a String">
+                        <input type="button" class="btn btn-secondary mb-3" onclick="highFreqCharacter()" value="Check Result">
+                    </form>
+                    <p class="none" id="alert18"></p>
+                </div>
+            </div>
+            <hr>
+            <!-- End of Row # 06 -->
+            <!-- Start of Row # 07 -->
+            <div class="row my-3">
+                <!-- Program # 19 -  -->
+                <div class="col-sm m-2 rounded segment">
+                    <h4 class="text-center"></h4>
+                    <form action="" onclick="return false">
+                        <input type="text" class="form-control mb-3" id="" placeholder="Enter a String">
+                        <input type="button" class="btn btn-secondary mb-3" onclick="" value="Check Result">
+                    </form>
+                    <p class="none" id="alert19"></p>
+                </div>
+                <!-- Program # 20 -  -->
+                <div class="col-sm m-2 rounded segment">
+                    <h4 class="text-center"></h4>
+                    <form action="" onclick="return false">
+                        <input type="text" class="form-control mb-3" id="" placeholder="Enter a String">
+                        <input type="button" class="btn btn-secondary mb-3" onclick="" value="Check Result">
+                    </form>
+                    <p class="none" id="alert20"></p>
+                </div>
+                <!-- Program # 21 -  -->
+                <div class="col-sm m-2 rounded segment">
+                    <h4 class="text-center"></h4>
+                    <form action="" onclick="return false">
+                        <input type="text" class="form-control mb-3" id="" placeholder="Enter a String">
+                        <input type="button" class="btn btn-secondary mb-3" onclick="" value="Check Result">
+                    </form>
+                    <p class="none" id="alert21"></p>
+                </div>
+            </div>
+            <hr>
+            <!-- End of Row # 07 -->
+            <!-- Start of Row # 08 -->
+            <div class="row my-3">
+                <!-- Program # 22 -  -->
+                <div class="col-sm m-2 rounded segment">
+                    <h4 class="text-center"></h4>
+                    <form action="" onclick="return false">
+                        <input type="text" class="form-control mb-3" id="" placeholder="Enter a String">
+                        <input type="button" class="btn btn-secondary mb-3" onclick="" value="Check Result">
+                    </form>
+                    <p class="none" id="alert22"></p>
+                </div>
+                <!-- Program # 23 -  -->
+                <div class="col-sm m-2 rounded segment">
+                    <h4 class="text-center"></h4>
+                    <form action="" onclick="return false">
+                        <input type="text" class="form-control mb-3" id="" placeholder="Enter a String">
+                        <input type="button" class="btn btn-secondary mb-3" onclick="" value="Check Result">
+                    </form>
+                    <p class="none" id="alert23"></p>
+                </div>
+                <!-- Program # 24 -  -->
+                <div class="col-sm m-2 rounded segment">
+                    <h4 class="text-center"></h4>
+                    <form action="" onclick="return false">
+                        <input type="text" class="form-control mb-3" id="" placeholder="Enter a String">
+                        <input type="button" class="btn btn-secondary mb-3" onclick="" value="Check Result">
+                    </form>
+                    <p class="none" id="alert24"></p>
+                </div>
+            </div>
+            <hr>
+            <!-- End of Row # 08 -->
+            <!-- Start of Row # 09 -->
+            <div class="row my-3">
+                <!-- Program # 25 -  -->
+                <div class="col-sm m-2 rounded segment">
+                    <h4 class="text-center"></h4>
+                    <form action="" onclick="return false">
+                        <input type="text" class="form-control mb-3" id="" placeholder="Enter a String">
+                        <input type="button" class="btn btn-secondary mb-3" onclick="" value="Check Result">
+                    </form>
+                    <p class="none" id="alert25"></p>
+                </div>
+                <!-- Program # 26 -  -->
+                <div class="col-sm m-2 rounded segment">
+                    <h4 class="text-center"></h4>
+                    <form action="" onclick="return false">
+                        <input type="text" class="form-control mb-3" id="" placeholder="Enter a String">
+                        <input type="button" class="btn btn-secondary mb-3" onclick="" value="Check Result">
+                    </form>
+                    <p class="none" id="alert26"></p>
+                </div>
+                <!-- Program # 27 -  -->
+                <div class="col-sm m-2 rounded segment">
+                    <h4 class="text-center"></h4>
+                    <form action="" onclick="return false">
+                        <input type="text" class="form-control mb-3" id="" placeholder="Enter a String">
+                        <input type="button" class="btn btn-secondary mb-3" onclick="" value="Check Result">
+                    </form>
+                    <p class="none" id="alert27"></p>
+                </div>
+            </div>
+            <hr>
+            <!-- End of Row # 09 -->
+            <!-- Start of Row # 10 -->
+            <div class="row my-3">
+                <!-- Program # 28 -  -->
+                <div class="col-sm m-2 rounded segment">
+                    <h4 class="text-center"></h4>
+                    <form action="" onclick="return false">
+                        <input type="text" class="form-control mb-3" id="" placeholder="Enter a String">
+                        <input type="button" class="btn btn-secondary mb-3" onclick="" value="Check Result">
+                    </form>
+                    <p class="none" id="alert28"></p>
+                </div>
+                <!-- Program # 29 -  -->
+                <div class="col-sm m-2 rounded segment">
+                    <h4 class="text-center"></h4>
+                    <form action="" onclick="return false">
+                        <input type="text" class="form-control mb-3" id="" placeholder="Enter a String">
+                        <input type="button" class="btn btn-secondary mb-3" onclick="" value="Check Result">
+                    </form>
+                    <p class="none" id="alert29"></p>
+                </div>
+                <!-- Program # 30 -  -->
+                <div class="col-sm m-2 rounded segment">
+                    <h4 class="text-center"></h4>
+                    <form action="" onclick="return false">
+                        <input type="text" class="form-control mb-3" id="" placeholder="Enter a String">
+                        <input type="button" class="btn btn-secondary mb-3" onclick="" value="Check Result">
+                    </form>
+                    <p class="none" id="alert30"></p>
+                </div>
+            </div>
+            <hr>
+            <!-- End of Row # 10 -->
         </section>
         <!-- End of Section 01 -->
     </main>
