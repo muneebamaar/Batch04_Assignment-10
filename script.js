@@ -590,7 +590,7 @@ function remFirstOccuCharacter() {
     var alert = document.getElementById('alert21');
     var message = '';
     var classes = '';
-    var conditionsArray = [!string];
+    var conditionsArray = [!string, !string2];
     if (conditionsArray.includes(true)) {
         message = '<strong>Please enter both string and character</strong>';
         classes = 'alert alert-danger text-center';
@@ -613,7 +613,7 @@ function remLastOccuCharacter() {
     var alert = document.getElementById('alert22');
     var message = '';
     var classes = '';
-    var conditionsArray = [!string];
+    var conditionsArray = [!string, !string2];
     if (conditionsArray.includes(true)) {
         message = '<strong>Please enter both string and character</strong>';
         classes = 'alert alert-danger text-center';
@@ -623,6 +623,233 @@ function remLastOccuCharacter() {
         var newString = string.slice(0,index) + string.slice(index+1,string.length);
 
         message = `<strong>Entered String: <br>"${string}" <br><br>New String: <br>"${newString}"</strong>`;
+        classes = 'alert alert-success text-center';
+    }
+    alert.innerHTML = message;
+    alert.className = classes;
+}
+
+// Program # 23 - Remove all occurances of a Character
+function remAllOccuCharacter() {
+    var string = document.getElementById('remAllOccuCharacterValue').value;
+    var character = document.getElementById('remAllOccuCharacterValue2').value;
+    var alert = document.getElementById('alert23');
+    var message = '';
+    var classes = '';
+    var conditionsArray = [!string, !character];
+    if (conditionsArray.includes(true)) {
+        message = '<strong>Please enter both string and character</strong>';
+        classes = 'alert alert-danger text-center';
+    }
+    else {
+        var index;
+        var newString = string.slice();
+        while(newString.includes(character)) {
+            index = newString.indexOf(character);
+            newString = newString.slice(0,index) + newString.slice(index+1,newString.length);
+        }
+
+        message = `<strong>Entered String: <br>"${string}" <br><br>New String: <br>"${newString}"</strong>`;
+        classes = 'alert alert-success text-center';
+    }
+    alert.innerHTML = message;
+    alert.className = classes;
+}
+
+// Program # 24 - Remove all repeated Characters in a String
+function remRepCharacters() {
+    var string = document.getElementById('remRepCharactersValue').value;
+    var alert = document.getElementById('alert24');
+    var message = '';
+    var classes = '';
+    var conditionsArray = [!string];
+    if (conditionsArray.includes(true)) {
+        message = '<strong>Please enter a string</strong>';
+        classes = 'alert alert-danger text-center';
+    }
+    else {
+        var index;
+        var newString = string.slice();
+        for (var i=0; i<newString.length; i++) {
+            if (newString[i] !== ' ') {
+                while (newString.indexOf(newString[i]) !== newString.lastIndexOf(newString[i])) {
+                    index = newString.lastIndexOf(newString[i]);
+                    newString = newString.slice(0,index) + newString.slice(index+1,newString.length);
+                }
+            }
+            
+        }
+
+        message = `<strong>Entered String: <br>"${string}" <br><br>New String: <br>"${newString}"</strong>`;
+        classes = 'alert alert-success text-center';
+    }
+    alert.innerHTML = message;
+    alert.className = classes;
+}
+
+// Program # 25 - Replace first occurance of a Character
+function repFirCharacter() {
+    var string = document.getElementById('repFirCharacterValue').value;
+    var character = document.getElementById('repFirCharacterValue2').value;
+    var character2 = document.getElementById('repFirCharacterValue3').value;
+    var alert = document.getElementById('alert25');
+    var message = '';
+    var classes = '';
+    var conditionsArray = [!string, !character, !character2];
+    if (conditionsArray.includes(true)) {
+        message = '<strong>Please enter a string and both characters</strong>';
+        classes = 'alert alert-danger text-center';
+    }
+    else {
+        var newString = string.slice();
+        var index = newString.indexOf(character);
+        newString = newString.slice(0,index) + character2 + newString.slice(index+1,newString.length);
+
+        message = `<strong>Entered String: <br>"${string}" <br><br>New String: <br>"${newString}"</strong>`;
+        classes = 'alert alert-success text-center';
+    }
+    alert.innerHTML = message;
+    alert.className = classes;
+}
+
+// Program # 26 - Replace last occurance of a Character
+function repLasCharacter() {
+    var string = document.getElementById('repLasCharacterValue').value;
+    var character = document.getElementById('repLasCharacterValue2').value;
+    var character2 = document.getElementById('repLasCharacterValue3').value;
+    var alert = document.getElementById('alert26');
+    var message = '';
+    var classes = '';
+    var conditionsArray = [!string, !character, !character2];
+    if (conditionsArray.includes(true)) {
+        message = '<strong>Please enter a string and both characters</strong>';
+        classes = 'alert alert-danger text-center';
+    }
+    else {
+        var newString = string.slice();
+        var index = newString.lastIndexOf(character);
+        newString = newString.slice(0,index) + character2 + newString.slice(index+1,newString.length);
+
+        message = `<strong>Entered String: <br>"${string}" <br><br>New String: <br>"${newString}"</strong>`;
+        classes = 'alert alert-success text-center';
+    }
+    alert.innerHTML = message;
+    alert.className = classes;
+}
+
+// Program # 27 - Replace all occurances of a Character
+function repAllCharacters() {
+    var string = document.getElementById('repAllCharactersValue').value;
+    var character = document.getElementById('repAllCharactersValue2').value;
+    var character2 = document.getElementById('repAllCharactersValue3').value;
+    var alert = document.getElementById('alert27');
+    var message = '';
+    var classes = '';
+    var conditionsArray = [!string, !character, !character2];
+    if (conditionsArray.includes(true)) {
+        message = '<strong>Please enter a string and both characters</strong>';
+        classes = 'alert alert-danger text-center';
+    }
+    else {
+        var index;
+        var newString = string.slice();
+        while(newString.indexOf(character) !== -1) {
+            index = newString.indexOf(character);
+            newString = newString.slice(0,index) + character2 + newString.slice(index+1,newString.length);
+        }
+        
+
+        message = `<strong>Entered String: <br>"${string}" <br><br>New String: <br>"${newString}"</strong>`;
+        classes = 'alert alert-success text-center';
+    }
+    alert.innerHTML = message;
+    alert.className = classes;
+}
+
+// Program # 28 - First occurance of a Word
+function firOccuWord() {
+    var string = document.getElementById('firOccuWordValue').value;
+    var word = document.getElementById('firOccuWordValue2').value;
+    var alert = document.getElementById('alert28');
+    var message = '';
+    var classes = '';
+    var conditionsArray = [!string, !word];
+    if (conditionsArray.includes(true)) {
+        message = '<strong>Please enter both string and a word</strong>';
+        classes = 'alert alert-danger text-center';
+    }
+    else {
+        var index = [];
+        for (var i=0; i<string.length; i++) {
+            if (string.slice(i, i+(word.length)) === word) {
+                index.push(i);
+            }
+        }
+        if (index.length === 0) {
+            index.push('Not Found');
+        }
+        
+        message = `<strong>Entered String: <br>"${string}" <br><br>First Occurance: <br>"${index[0]}"</strong>`;
+        classes = 'alert alert-success text-center';
+    }
+    alert.innerHTML = message;
+    alert.className = classes;
+}
+
+// Program # 29 - Last occurance of a Word
+function lasOccuWord() {
+    var string = document.getElementById('lasOccuWordValue').value;
+    var word = document.getElementById('lasOccuWordValue2').value;
+    var alert = document.getElementById('alert29');
+    var message = '';
+    var classes = '';
+    var conditionsArray = [!string, !word];
+    if (conditionsArray.includes(true)) {
+        message = '<strong>Please enter both string and a word</strong>';
+        classes = 'alert alert-danger text-center';
+    }
+    else {
+        var index = [];
+        for (var i=0; i<string.length; i++) {
+            if (string.slice(i, i+(word.length)) === word) {
+                index.push(i);
+            }
+        }
+        if (index.length === 0) {
+            index.push('Not Found');
+        }
+        
+        message = `<strong>Entered String: <br>"${string}" <br><br>Last Occurance: <br>"${index[index.length-1]}"</strong>`;
+        classes = 'alert alert-success text-center';
+    }
+    alert.innerHTML = message;
+    alert.className = classes;
+}
+
+// Program # 30 - All occurances of a Word 
+function allOccuWord() {
+    var string = document.getElementById('allOccuWordValue').value;
+    var word = document.getElementById('allOccuWordValue2').value;
+    var alert = document.getElementById('alert30');
+    var message = '';
+    var classes = '';
+    var conditionsArray = [!string, !word];
+    if (conditionsArray.includes(true)) {
+        message = '<strong>Please enter both string and a word</strong>';
+        classes = 'alert alert-danger text-center';
+    }
+    else {
+        var index = [];
+        for (var i=0; i<string.length; i++) {
+            if (string.slice(i, i+(word.length)) === word) {
+                index.push(i);
+            }
+        }
+        if (index.length === 0) {
+            index.push('Not Found');
+        }
+        
+        message = `<strong>Entered String: <br>"${string}" <br><br>All Occurances: <br>"${index}"</strong>`;
         classes = 'alert alert-success text-center';
     }
     alert.innerHTML = message;
