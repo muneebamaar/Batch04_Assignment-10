@@ -374,7 +374,6 @@
                     <form action="" onclick="return false">
                         <input type="text" class="form-control mb-3" id="remFirOccuWordValue" placeholder="Enter a String">
                         <input type="text" class="form-control mb-3" id="remFirOccuWordValue2" placeholder="Enter first Word">
-                        <input type="text" class="form-control mb-3" id="remFirOccuWordValue3" placeholder="Enter second Word">
                         <input type="button" class="btn btn-secondary mb-3" onclick="remFirOccuWord()" value="Check Result">
                     </form>
                     <p class="none" id="alert32"></p>
@@ -385,7 +384,6 @@
                     <form action="" onclick="return false">
                         <input type="text" class="form-control mb-3" id="remLasOccuWordValue" placeholder="Enter a String">
                         <input type="text" class="form-control mb-3" id="remLasOccuWordValue2" placeholder="Enter first Word">
-                        <input type="text" class="form-control mb-3" id="remLasOccuWordValue3" placeholder="Enter second Word">
                         <input type="button" class="btn btn-secondary mb-3" onclick="remLasOccuWord()" value="Check Result">
                     </form>
                     <p class="none" id="alert33"></p>
@@ -401,26 +399,25 @@
                     <form action="" onclick="return false">
                         <input type="text" class="form-control mb-3" id="remAllOccuWordValue" placeholder="Enter a String">
                         <input type="text" class="form-control mb-3" id="remAllOccuWordValue2" placeholder="Enter first Word">
-                        <input type="text" class="form-control mb-3" id="remAllOccuWordValue3" placeholder="Enter second Word">
                         <input type="button" class="btn btn-secondary mb-3" onclick="remAllOccuWord()" value="Check Result">
                     </form>
                     <p class="none" id="alert34"></p>
                 </div>
-                <!-- Program # 35 -  -->
+                <!-- Program # 35 - Trim leading white space characters -->
                 <div class="col-sm m-2 segment rounded">
-                    <h4 class="text-center"></h4>
+                    <h4 class="text-center">Trim leading white space characters</h4>
                     <form action="" onclick="return false">
-                        <input type="text" class="form-control mb-3" id="" placeholder="Enter a String">
-                        <input type="button" class="btn btn-secondary mb-3" onclick="" value="Check Result">
+                        <input type="text" class="form-control mb-3" id="trimLeaWhiCharacterValue" placeholder="Enter a String">
+                        <input type="button" class="btn btn-secondary mb-3" onclick="trimLeaWhiCharacter()" value="Check Result">
                     </form>
                     <p class="none" id="alert35"></p>
                 </div>
-                <!-- Program # 36 -  -->
+                <!-- Program # 36 - Trim tailing white space characters -->
                 <div class="col-sm m-2 segment rounded">
-                    <h4 class="text-center"></h4>
+                    <h4 class="text-center">Trim tailing white space characters</h4>
                     <form action="" onclick="return false">
-                        <input type="text" class="form-control mb-3" id="" placeholder="Enter a String">
-                        <input type="button" class="btn btn-secondary mb-3" onclick="" value="Check Result">
+                        <input type="text" class="form-control mb-3" id="trimTraWhiCharacterValue" placeholder="Enter a String">
+                        <input type="button" class="btn btn-secondary mb-3" onclick="trimTraWhiCharacter()" value="Check Result">
                     </form>
                     <p class="none" id="alert36"></p>
                 </div>
@@ -429,24 +426,39 @@
             <!-- End of Row # 12 -->
             <!-- Start of Row # 13 -->
             <div class="row">
-                <!-- Program # 37 -  -->
+                <!-- Program # 37 - Trim both leading and trailing white spaces -->
                 <div class="col-sm m-2 segment rounded">
-                    <h4 class="text-center"></h4>
+                    <h4 class="text-center">Trim both leading and trailing white spaces</h4>
                     <form action="" onclick="return false">
-                        <input type="text" class="form-control mb-3" id="" placeholder="Enter a String">
-                        <input type="button" class="btn btn-secondary mb-3" onclick="" value="Check Result">
+                        <input type="text" class="form-control mb-3" id="trimBothWhiCharacterValue" placeholder="Enter a String">
+                        <input type="button" class="btn btn-secondary mb-3" onclick="trimBothWhiCharacter()" value="Check Result">
                     </form>
                     <p class="none" id="alert37"></p>
                 </div>
-                <!-- Program # 38 -  -->
+                <!-- Program # 38 - Remove all extra blank spaces from String -->
                 <div class="col-sm m-2 segment rounded">
-                    <h4 class="text-center"></h4>
+                    <h4 class="text-center">Remove all extra blank spaces from String</h4>
                     <form action="" onclick="return false">
-                        <input type="text" class="form-control mb-3" id="" placeholder="Enter a String">
-                        <input type="button" class="btn btn-secondary mb-3" onclick="" value="Check Result">
+                        <input type="text" class="form-control mb-3" id="remAllWhiCharacterValue" placeholder="Enter a String">
+                        <input type="button" class="btn btn-secondary mb-3" onclick="remAllWhiCharacter()" value="Check Result">
                     </form>
                     <p class="none" id="alert38"></p>
                 </div>
+                <!-- Empty Div -->
+                <div class="col-sm m-2">
+
+                </div>
+            </div>
+            <hr>
+            <!-- End of Row # 13 -->
+        </section>
+        <!-- End of Section # 01 -->
+        <!-- Section 02 - Object Handling -->
+        <section>
+            <h2 class="text-center">Object Handling</h2>
+            <hr>
+            <!-- Start of Row # 14 -->
+            <div class="row">
                 <!-- Program # 39 -  -->
                 <div class="col-sm m-2 segment rounded">
                     <h4 class="text-center"></h4>
@@ -456,15 +468,6 @@
                     </form>
                     <p class="none" id="alert39"></p>
                 </div>
-            </div>
-            <hr>
-            <!-- End of Row # 13 -->
-        </section>
-        <!-- End of Section # 01 -->
-        <!-- Section 02 - Object Handling -->
-        <section>
-            <!-- Start of Row # 14 -->
-            <div class="row">
                 <!-- Program # 40 -  -->
                 <div class="col-sm m-2 segment rounded">
                     <h4 class="text-center"></h4>
@@ -482,15 +485,6 @@
                         <input type="button" class="btn btn-secondary mb-3" onclick="" value="Check Result">
                     </form>
                     <p class="none" id="alert41"></p>
-                </div>
-                <!-- Program # 42 -  -->
-                <div class="col-sm m-2 segment rounded">
-                    <h4 class="text-center"></h4>
-                    <form action="" onclick="return false">
-                        <input type="text" class="form-control mb-3" id="" placeholder="Enter a String">
-                        <input type="button" class="btn btn-secondary mb-3" onclick="" value="Check Result">
-                    </form>
-                    <p class="none" id="alert42"></p>
                 </div>
             </div>
             <hr>

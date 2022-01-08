@@ -877,11 +877,10 @@ function countOccuWord() {
 function remFirOccuWord() {
     var string = document.getElementById('remFirOccuWordValue').value;
     var word = document.getElementById('remFirOccuWordValue2').value;
-    var word2 = document.getElementById('remFirOccuWordValue3').value;
     var alert = document.getElementById('alert32');
     var message = '';
     var classes = '';
-    var conditionsArray = [!string, !word, !word2];
+    var conditionsArray = [!string, !word];
     if (conditionsArray.includes(true)) {
         message = '<strong>Please enter a string and both words</strong>';
         classes = 'alert alert-danger text-center';
@@ -892,7 +891,7 @@ function remFirOccuWord() {
             newString = 'Word not Matched';
         }
         else {
-            var newString = string.slice(0,index[0]) + word2 + string.slice(index[0]+word.length,string.length);
+            var newString = string.slice(0,index[0]) + string.slice(index[0]+word.length,string.length);
         }
         
         message = `<strong>Entered String: <br>"${string}" <br><br>New String: <br>"${newString}"</strong>`;
@@ -902,15 +901,14 @@ function remFirOccuWord() {
     alert.className = classes;
 }
 
-// Program # 33 - Remove last occurance of a Word
+// Program # 33 - Remove last occurances of a Word
 function remLasOccuWord() {
     var string = document.getElementById('remLasOccuWordValue').value;
     var word = document.getElementById('remLasOccuWordValue2').value;
-    var word2 = document.getElementById('remLasOccuWordValue3').value;
     var alert = document.getElementById('alert33');
     var message = '';
     var classes = '';
-    var conditionsArray = [!string, !word, !word2];
+    var conditionsArray = [!string, !word];
     if (conditionsArray.includes(true)) {
         message = '<strong>Please enter a string and both words</strong>';
         classes = 'alert alert-danger text-center';
@@ -921,7 +919,7 @@ function remLasOccuWord() {
             newString = 'Word not Matched';
         }
         else {
-            var newString = string.slice(0,index[index.length-1]) + word2 + string.slice(index[index.length-1]+word.length,string.length);
+            var newString = string.slice(0,index[index.length-1]) + string.slice(index[index.length-1]+word.length,string.length);
         }
         
         message = `<strong>Entered String: <br>"${string}" <br><br>New String: <br>"${newString}"</strong>`;
@@ -931,15 +929,14 @@ function remLasOccuWord() {
     alert.className = classes;
 }
 
-// Program # 34 - Remove all occurance of a Word 
+// Program # 34 - Remove all occurances of a Word 
 function remAllOccuWord() {
     var string = document.getElementById('remAllOccuWordValue').value;
     var word = document.getElementById('remAllOccuWordValue2').value;
-    var word2 = document.getElementById('remAllOccuWordValue3').value;
     var alert = document.getElementById('alert34');
     var message = '';
     var classes = '';
-    var conditionsArray = [!string, !word, !word2];
+    var conditionsArray = [!string, !word];
     if (conditionsArray.includes(true)) {
         message = '<strong>Please enter a string and both words</strong>';
         classes = 'alert alert-danger text-center';
@@ -950,11 +947,116 @@ function remAllOccuWord() {
             newString = 'Word not Matched';
         }
         else {
-            for (var i=0; i<index.length; i++) {
-                var newString = string.slice(0,index[i]) + word2 + string.slice(index[i]+word.length,string.length);
+            var newString = string.slice()
+            while (index.length !== 1) {
+                index = indexesOf(newString, word);
+                newString = newString.slice(0,index[0]) + newString.slice(index[0]+word.length,newString.length);
             }
         }
         
+        message = `<strong>Entered String: <br>"${string}" <br><br>New String: <br>"${newString}"</strong>`;
+        classes = 'alert alert-success text-center';
+    }
+    alert.innerHTML = message;
+    alert.className = classes;
+}
+
+// Program # 35 - Trim leading white space characters
+function trimLeaWhiCharacter() {
+    var string = document.getElementById('trimLeaWhiCharacterValue').value;
+    var alert = document.getElementById('alert35');
+    var message = '';
+    var classes = '';
+    var conditionsArray = [!string];
+    if (conditionsArray.includes(true)) {
+        message = '<strong>Please enter a string</strong>';
+        classes = 'alert alert-danger text-center';
+    }
+    else {
+        var newString = string.slice();
+        while (newString[0] === ' ') {
+            newString = newString.slice(1, newString.length);
+        }
+        message = `<strong>Entered String: <br>"${string}" <br><br>New String: <br>"${newString}"</strong>`;
+        classes = 'alert alert-success text-center';
+    }
+    alert.innerHTML = message;
+    alert.className = classes;
+}
+
+// Program # 36 - Trim tailing white space characters
+function trimTraWhiCharacter() {
+    var string = document.getElementById('trimTraWhiCharacterValue').value;
+    var alert = document.getElementById('alert36');
+    var message = '';
+    var classes = '';
+    var conditionsArray = [!string];
+    if (conditionsArray.includes(true)) {
+        message = '<strong>Please enter a string</strong>';
+        classes = 'alert alert-danger text-center';
+    }
+    else {
+        var newString = string.slice();
+        while (newString[newString.length-1] === ' ') {
+            newString = newString.slice(0, newString.length-1);
+        }
+        message = `<strong>Entered String: <br>"${string}" <br><br>New String: <br>"${newString}"</strong>`;
+        classes = 'alert alert-success text-center';
+    }
+    alert.innerHTML = message;
+    alert.className = classes;
+}
+
+// Program # 37 - Trim both leading and trailing white spaces
+function trimBothWhiCharacter() {
+    var string = document.getElementById('trimBothWhiCharacterValue').value;
+    var alert = document.getElementById('alert37');
+    var message = '';
+    var classes = '';
+    var conditionsArray = [!string];
+    if (conditionsArray.includes(true)) {
+        message = '<strong>Please enter a string</strong>';
+        classes = 'alert alert-danger text-center';
+    }
+    else {
+        var newString = string.slice();
+        while (newString[0] === ' ') {
+            newString = newString.slice(1, newString.length);
+        }
+        while (newString[newString.length-1] === ' ') {
+            newString = newString.slice(0, newString.length-1);
+        }
+        message = `<strong>Entered String: <br>"${string}" <br><br>New String: <br>"${newString}"</strong>`;
+        classes = 'alert alert-success text-center';
+    }
+    alert.innerHTML = message;
+    alert.className = classes;
+}
+
+// Remove all extra blank spaces from String
+function remAllWhiCharacter() {
+    var string = document.getElementById('remAllWhiCharacterValue').value;
+    var alert = document.getElementById('alert38');
+    var message = '';
+    var classes = '';
+    var conditionsArray = [!string];
+    if (conditionsArray.includes(true)) {
+        message = '<strong>Please enter a string</strong>';
+        classes = 'alert alert-danger text-center';
+    }
+    else {
+        var newString = string.slice();
+        for (var i=0; i<newString.length; i++) {
+            if (newString[i] === newString[i+1]) {
+                newString = newString.slice(0, i) + newString.slice(i+1, newString.length);
+            }
+        }
+        while (newString[0] === ' ') {
+            newString = newString.slice(1, newString.length);
+        }
+        while (newString[newString.length-1] === ' ') {
+            newString = newString.slice(0, newString.length-1);
+        }
         message = `<strong>Entered String: <br>"${string}" <br><br>New String: <br>"${newString}"</strong>`;
         classes = 'alert alert-success text-center';
     }
