@@ -19,9 +19,16 @@ function stringToArray(string) {
     return array;
 }
 
-
-
-
+// Function to get indexes of all words
+function indexesOf(string,word) {
+    var index = [];
+    for (var i=0; i<string.length; i++) {
+        if (string.slice(i, i+(word.length)) === word) {
+            index.push(i);
+        }
+    }
+    return index;
+}
 
 // Program # 01 - Find the length of a String
 function lengthOfString() {
@@ -779,12 +786,7 @@ function firOccuWord() {
         classes = 'alert alert-danger text-center';
     }
     else {
-        var index = [];
-        for (var i=0; i<string.length; i++) {
-            if (string.slice(i, i+(word.length)) === word) {
-                index.push(i);
-            }
-        }
+        var index = indexesOf(string, word);
         if (index.length === 0) {
             index.push('Not Found');
         }
@@ -809,12 +811,7 @@ function lasOccuWord() {
         classes = 'alert alert-danger text-center';
     }
     else {
-        var index = [];
-        for (var i=0; i<string.length; i++) {
-            if (string.slice(i, i+(word.length)) === word) {
-                index.push(i);
-            }
-        }
+        var index = indexesOf(string, word);
         if (index.length === 0) {
             index.push('Not Found');
         }
@@ -839,17 +836,126 @@ function allOccuWord() {
         classes = 'alert alert-danger text-center';
     }
     else {
-        var index = [];
-        for (var i=0; i<string.length; i++) {
-            if (string.slice(i, i+(word.length)) === word) {
-                index.push(i);
-            }
-        }
+        var index = indexesOf(string, word);
         if (index.length === 0) {
             index.push('Not Found');
         }
         
         message = `<strong>Entered String: <br>"${string}" <br><br>All Occurances: <br>"${index}"</strong>`;
+        classes = 'alert alert-success text-center';
+    }
+    alert.innerHTML = message;
+    alert.className = classes;
+}
+
+// Program # 31 - Count all occurances of a Word
+function countOccuWord() {
+    var string = document.getElementById('countOccuWordValue').value;
+    var word = document.getElementById('countOccuWordValue2').value;
+    var alert = document.getElementById('alert31');
+    var message = '';
+    var classes = '';
+    var conditionsArray = [!string, !word];
+    if (conditionsArray.includes(true)) {
+        message = '<strong>Please enter both string and a word</strong>';
+        classes = 'alert alert-danger text-center';
+    }
+    else {
+        var index = indexesOf(string, word);
+        if (index.length === 0) {
+            index.push('Not Found');
+        }
+        
+        message = `<strong>Entered String: <br>"${string}" <br><br>Total Occurances: <br>"${index.length}"</strong>`;
+        classes = 'alert alert-success text-center';
+    }
+    alert.innerHTML = message;
+    alert.className = classes;
+}
+
+// Program # 32 - Remove first occurance of a Word
+function remFirOccuWord() {
+    var string = document.getElementById('remFirOccuWordValue').value;
+    var word = document.getElementById('remFirOccuWordValue2').value;
+    var word2 = document.getElementById('remFirOccuWordValue3').value;
+    var alert = document.getElementById('alert32');
+    var message = '';
+    var classes = '';
+    var conditionsArray = [!string, !word, !word2];
+    if (conditionsArray.includes(true)) {
+        message = '<strong>Please enter a string and both words</strong>';
+        classes = 'alert alert-danger text-center';
+    }
+    else {
+        var index = indexesOf(string, word);
+        if (index.length === 0) {
+            newString = 'Word not Matched';
+        }
+        else {
+            var newString = string.slice(0,index[0]) + word2 + string.slice(index[0]+word.length,string.length);
+        }
+        
+        message = `<strong>Entered String: <br>"${string}" <br><br>New String: <br>"${newString}"</strong>`;
+        classes = 'alert alert-success text-center';
+    }
+    alert.innerHTML = message;
+    alert.className = classes;
+}
+
+// Program # 33 - Remove last occurance of a Word
+function remLasOccuWord() {
+    var string = document.getElementById('remLasOccuWordValue').value;
+    var word = document.getElementById('remLasOccuWordValue2').value;
+    var word2 = document.getElementById('remLasOccuWordValue3').value;
+    var alert = document.getElementById('alert33');
+    var message = '';
+    var classes = '';
+    var conditionsArray = [!string, !word, !word2];
+    if (conditionsArray.includes(true)) {
+        message = '<strong>Please enter a string and both words</strong>';
+        classes = 'alert alert-danger text-center';
+    }
+    else {
+        var index = indexesOf(string, word);
+        if (index.length === 0) {
+            newString = 'Word not Matched';
+        }
+        else {
+            var newString = string.slice(0,index[index.length-1]) + word2 + string.slice(index[index.length-1]+word.length,string.length);
+        }
+        
+        message = `<strong>Entered String: <br>"${string}" <br><br>New String: <br>"${newString}"</strong>`;
+        classes = 'alert alert-success text-center';
+    }
+    alert.innerHTML = message;
+    alert.className = classes;
+}
+
+// Program # 34 - Remove all occurance of a Word 
+function remAllOccuWord() {
+    var string = document.getElementById('remAllOccuWordValue').value;
+    var word = document.getElementById('remAllOccuWordValue2').value;
+    var word2 = document.getElementById('remAllOccuWordValue3').value;
+    var alert = document.getElementById('alert34');
+    var message = '';
+    var classes = '';
+    var conditionsArray = [!string, !word, !word2];
+    if (conditionsArray.includes(true)) {
+        message = '<strong>Please enter a string and both words</strong>';
+        classes = 'alert alert-danger text-center';
+    }
+    else {
+        var index = indexesOf(string, word);
+        if (index.length === 0) {
+            newString = 'Word not Matched';
+        }
+        else {
+            for (var i=0; i<index.length; i++) {
+                var newString = string.slice(0,index[i]) + word2 + string.slice(index[i]+word.length,string.length);
+            }
+        }
+        
+        message = `<strong>Entered String: <br>"${string}" <br><br>New String: <br>"${newString}"</strong>`;
         classes = 'alert alert-success text-center';
     }
     alert.innerHTML = message;
