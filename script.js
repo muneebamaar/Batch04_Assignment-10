@@ -356,7 +356,7 @@ function reverseWords() {
 
 // Program # 14 - First Occurance of a Character
 function firstOccuCharacter() {
-    var string = document.getElementById('firstOccuCharacterValue').value
+    var string = document.getElementById('firstOccuCharacterValue').value;
     var string2 = document.getElementById('firstOccuCharacterValue2').value;
     var alert = document.getElementById('alert14');
     var message = '';
@@ -381,7 +381,7 @@ function firstOccuCharacter() {
 
 // Program # 15 - Last Occurance of a Character
 function lastOccuCharacter() {
-    var string = document.getElementById('lastOccuCharacterValue').value
+    var string = document.getElementById('lastOccuCharacterValue').value;
     var string2 = document.getElementById('lastOccuCharacterValue2').value;
     var alert = document.getElementById('alert15');
     var message = '';
@@ -406,7 +406,7 @@ function lastOccuCharacter() {
 
 // Program # 16 - Search all occurances of Character
 function allOccuCharacter() {
-    var string = document.getElementById('allOccuCharacterValue').value
+    var string = document.getElementById('allOccuCharacterValue').value;
     var string2 = document.getElementById('allOccuCharacterValue2').value;
     var alert = document.getElementById('alert16');
     var message = '';
@@ -436,7 +436,7 @@ function allOccuCharacter() {
 
 // Program # 17 - Count all Occurances of a Character
 function countOccuCharacter() {
-    var string = document.getElementById('countOccuCharacterValue').value
+    var string = document.getElementById('countOccuCharacterValue').value;
     var string2 = document.getElementById('countOccuCharacterValue2').value;
     var alert = document.getElementById('alert17');
     var message = '';
@@ -466,7 +466,7 @@ function countOccuCharacter() {
 
 // Program # 18 - Find Highest Frequency Character
 function highFreqCharacter() {
-    var string = document.getElementById('highFreqCharacterValue').value
+    var string = document.getElementById('highFreqCharacterValue').value;
     var alert = document.getElementById('alert18');
     var message = '';
     var classes = '';
@@ -477,7 +477,7 @@ function highFreqCharacter() {
     }
     else {
         var charArray = [];
-        var freqArray = []
+        var freqArray = [];
         for (var i=0; i<string.length; i++) {
             if (string[i] !== ' ') {
                 if (charArray.indexOf(string[i]) !== -1) {
@@ -499,6 +499,130 @@ function highFreqCharacter() {
         }
 
         message = `<strong>Entered String: <br>"${string}" <br><br>Highest Frequency Character is "${charArray[index]}"</strong>`;
+        classes = 'alert alert-success text-center';
+    }
+    alert.innerHTML = message;
+    alert.className = classes;
+}
+
+// Program # 19 - Find Lowest Frequency Character
+function lowFreqCharacter() {
+    var string = document.getElementById('lowFreqCharacterValue').value;
+    var alert = document.getElementById('alert19');
+    var message = '';
+    var classes = '';
+    var conditionsArray = [!string];
+    if (conditionsArray.includes(true)) {
+        message = '<strong>Please enter a string</strong>';
+        classes = 'alert alert-danger text-center';
+    }
+    else {
+        var charArray = [];
+        var freqArray = [];
+        for (var i=0; i<string.length; i++) {
+            if (string[i] !== ' ') {
+                if (charArray.indexOf(string[i]) !== -1) {
+                    freqArray[charArray.indexOf(string[i])]++;
+                }
+                else {
+                    charArray.push(string[i]);
+                    freqArray.push(1);
+                }
+            }
+        }
+        var minValue = freqArray[0];
+        var index = 0;
+        for (var j=0; j<freqArray.length; j++) {
+            if (freqArray[j] < minValue) {
+                minValue = freqArray[j];
+                index = j;
+            }
+        }
+
+        message = `<strong>Entered String: <br>"${string}" <br><br>Highest Frequency Character is "${charArray[index]}"</strong>`;
+        classes = 'alert alert-success text-center';
+    }
+    alert.innerHTML = message;
+    alert.className = classes;
+}
+
+// Count Frequency of each Character
+function freqEachCharacter() {
+    var string = document.getElementById('freqEachCharacterValue').value;
+    var alert = document.getElementById('alert20');
+    var message = '';
+    var classes = '';
+    var conditionsArray = [!string];
+    if (conditionsArray.includes(true)) {
+        message = '<strong>Please enter a string</strong>';
+        classes = 'alert alert-danger text-center';
+    }
+    else {
+        var charArray = [];
+        var freqArray = [];
+        for (var i=0; i<string.length; i++) {
+            if (string[i] !== ' ') {
+                if (charArray.indexOf(string[i]) !== -1) {
+                    freqArray[charArray.indexOf(string[i])]++;
+                }
+                else {
+                    charArray.push(string[i]);
+                    freqArray.push(1);
+                }
+            }
+        }
+        var statement = '';
+        for (var j=0; j<freqArray.length; j++) {
+            statement += `<br>${charArray[j]} : ${freqArray[j]}`;
+        }
+
+        message = `<strong>Entered String: <br>"${string}" <br><br>Occurances:<br>${statement}</strong>`;
+        classes = 'alert alert-success text-center';
+    }
+    alert.innerHTML = message;
+    alert.className = classes;
+}
+
+// Program # 21 - Remove first occurance of a character
+function remFirstOccuCharacter() {
+    var string = document.getElementById('remFirstOccuCharacterValue').value;
+    var string2 = document.getElementById('remFirstOccuCharacterValue2').value;
+    var alert = document.getElementById('alert21');
+    var message = '';
+    var classes = '';
+    var conditionsArray = [!string];
+    if (conditionsArray.includes(true)) {
+        message = '<strong>Please enter both string and character</strong>';
+        classes = 'alert alert-danger text-center';
+    }
+    else {
+        var index = string.indexOf(string2);
+        var newString = string.slice(0,index) + string.slice(index+1,string.length);
+
+        message = `<strong>Entered String: <br>"${string}" <br><br>New String: <br>"${newString}"</strong>`;
+        classes = 'alert alert-success text-center';
+    }
+    alert.innerHTML = message;
+    alert.className = classes;
+}
+
+// Program # 22 - Remove Last occurance of a Character
+function remLastOccuCharacter() {
+    var string = document.getElementById('remLastOccuCharacterValue').value;
+    var string2 = document.getElementById('remLastOccuCharacterValue2').value;
+    var alert = document.getElementById('alert22');
+    var message = '';
+    var classes = '';
+    var conditionsArray = [!string];
+    if (conditionsArray.includes(true)) {
+        message = '<strong>Please enter both string and character</strong>';
+        classes = 'alert alert-danger text-center';
+    }
+    else {
+        var index = string.lastIndexOf(string2);
+        var newString = string.slice(0,index) + string.slice(index+1,string.length);
+
+        message = `<strong>Entered String: <br>"${string}" <br><br>New String: <br>"${newString}"</strong>`;
         classes = 'alert alert-success text-center';
     }
     alert.innerHTML = message;
