@@ -3,7 +3,7 @@ function stringToArray(string) {
     var array = [];
     var word = '';
     for (var i=0; i<string.length; i++) {
-        if (string[i] !== ' ') {
+        if (string[i] !== ' ' && !string[i].match(/[,]/g)) {
             word += string[i];
         }
         else {
@@ -1060,6 +1060,97 @@ function remAllWhiCharacter() {
         message = `<strong>Entered String: <br>"${string}" <br><br>New String: <br>"${newString}"</strong>`;
         classes = 'alert alert-success text-center';
     }
+    alert.innerHTML = message;
+    alert.className = classes;
+}
+
+// Program # 39 - List properties of a Object
+function listProObject() {
+    var string = document.getElementById('listProObjectValue').value;
+    var alert = document.getElementById('alert39');
+    var message = '';
+    var classes = '';
+    var array = stringToArray(string);
+    var conditionsArray = [!string, array.length !== 3];
+    if (conditionsArray.includes(true)) {
+        message = '<strong>Please enter three values: name, class, rollno</strong>';
+        classes = 'alert alert-danger text-center';
+    }
+    else {
+        var student = {
+            name: array[0],
+            sclass: array[1],
+            rollno: array[2]
+        };
+
+        message = `<strong>Entered String: <br>"${string}" <br><br>Object Properties:<br>name : ${student.name}<br>sclass : ${student.sclass}
+            <br>rollno : ${student.rollno}</strong>`;
+        classes = 'alert alert-success text-center';
+    }
+    alert.innerHTML = message;
+    alert.className = classes;
+}
+
+// Program # 40 - Delete rollno property from Object
+function delRollnoObject() {
+    var alert = document.getElementById('alert40');
+    var student = {
+        name : 'David Rayy',
+        sclass : 'VI',
+        rollno : 12
+    };
+    delete student.rollno;
+
+    var message = `<strong>After Deleting rollno:<br><br>student = {<br>name : "${student.name}",<br>sclass : "${student.sclass}",<br>rollno : 
+    ${student.rollno} };</strong>`;
+    var classes = 'alert alert-success';
+    alert.innerHTML = message;
+    alert.className = classes;
+}
+
+// Program # 41 - Get length of a Javascript Object
+function lengthOfObject() {
+    var alert = document.getElementById('alert41');
+    var student = {
+        name : 'David Rayy',
+        sclass : 'VI',
+        rollno : 12
+    };
+    var length = Object.keys(student).length;
+
+    var message = `<strong>Length of Student: "${length}"</strong>`;
+    var classes = 'alert alert-success';
+    alert.innerHTML = message;
+    alert.className = classes;
+}
+
+// Program # 42 - Display Reading Status of Books
+function readingValuesOfObject() {
+    var alert = document.getElementById('alert41');
+    var library = [
+        {
+            author: 'Bill Gates',
+            title: 'The Road Ahead',
+            readingStatus: true
+        },
+        {
+            author: 'Steve Jobs',
+            title: 'Walter Isaacson',
+            readingStatus: true
+        },
+        {
+            author: 'Suzanne Collins',
+            title: 'Mockingjay: The Final Book of The Hunger Games',
+            readingStatus: false
+        }
+    ];
+    var statement = '';
+    for (var i=0; i<library.length; i++) {
+        statement += `Title: ${library[i].title}<br>`
+    }
+
+    var message = `<strong></strong>`;
+    var classes = 'alert alert-success';
     alert.innerHTML = message;
     alert.className = classes;
 }
